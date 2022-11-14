@@ -1,0 +1,44 @@
+a = int(input())
+b = a
+number = []
+while a > 0:
+    number.append(a%10)
+    a //= 10
+number.reverse()
+magical = False
+interesting = False
+magical_number = number[0] * number[1] * number[2]
+number_max = max(number)
+number.remove(number_max)
+number_min = min(number)
+number.remove(number_min)
+if (magical_number > 150) and (magical_number < 400):
+    magical = True
+
+if number_max - number_min == number[0]:
+    interesting = True
+
+if magical and interesting:
+    print('Это число магическое и интересное! Введите строку: >>>')
+    stroka = str(input())
+    print('Введите вещественное число: >>>')
+    a = float(input())
+    dlina = len(stroka)
+    x = ((a - b)**2) / (a * (b/3))
+    print(x)
+elif magical:
+    print('Это число магическое! Введите строку: >>>')
+    stroka = str(input())
+
+    if 'маг' in stroka.lower():
+        print('Заколдовано!')
+    else:
+        print('Нет эффекта!')
+
+elif interesting:
+    print('Это число интересное! Введите строку: >>>')
+    stroka = str(input())
+    print((b / len(stroka)) ** 2)
+
+else:
+    print('Это обычное число.')
