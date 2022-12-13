@@ -28,7 +28,7 @@ print(task_1(-1.5, 1.5, 0.1))
 
 
 задача 2
-import numpy, math
+import math
 def task_2(string):
     t2_array = []
     t2_array.append(len(string))
@@ -52,7 +52,7 @@ print(task_2(phrase))
 
 
 задача 3
-import numpy, math
+import math
 def task_3(num):
     file = open('task_3.txt', 'r', encoding='utf-8').read().splitlines() 
     return file[num]
