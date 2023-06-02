@@ -1,0 +1,56 @@
+
+
+# задача 1
+
+def task_1(*args): 
+    x_sum = float()
+    for x in args:
+        x_sum += x
+    M = x_sum / len(args)
+
+    D = float()
+    for x in args:
+        D += (x - M) ** 2
+
+    sigma = D ** 0.5
+    V = sigma / M
+
+    print(M, D, sigma, V)  # выводит
+    return M, D, sigma, V  # возвращает
+
+
+
+# задача 2
+
+def task_2(*args):
+    list_of_str = []
+    list_of_num = []
+    list_of_bool = []
+    list_of_other = []
+    for elem in args:
+        if type(elem) is str:
+            list_of_str.append(elem)
+        elif type(elem) is int or type(elem) is float:
+            list_of_num.append(elem)
+        elif type(elem) is bool:
+            list_of_bool.append(elem)
+        else:
+            list_of_other.append(elem)
+
+    print(list_of_num,  list_of_str,  list_of_bool,  list_of_other)
+
+
+
+# задача 3
+
+def task_3(word, **dicts):
+    for x in dicts.items():
+        a = x[1].get(word)
+        if a:
+            print(x[1])
+
+
+task_1(1, 2, 3, 4, 5, 6, 7)
+task_2(1, 2, 'a', 'v', True, False, {1: 1})
+dictionary = {'1':{'DEBUG':'Tracemod'}, '2' : {'ERROR':'Null pointer exception'}, '3' : {'INFO' :'startGameAllert'}, '4' : {'DEBUG' : 'sendAllert'}, '5' : {'ERROR' : 'No valid JSON'}}
+task_3('ERROR', **dictionary)
